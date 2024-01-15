@@ -62,23 +62,17 @@ async function isOutputPresent(browser, page, user){
     if(user.userEmail!=""){
         const email = await page.$eval('#email', el => el.textContent );
         
-        console.log("includes "+email.includes(user.userEmail))
-
         if(!email.includes(user.userEmail))
             return false;
     }
     if(user.currentAddress!=""){
         const currentAddress = await page.$eval('#currentAddress', el => el.value );
         
-        console.log("includes "+currentAddress.includes(user.currentAddress))
-
         if(!currentAddress.includes(user.currentAddress))
             return false;
     }
     if(user.permanentAddress!=""){
         const permanentAddress = await page.$eval('#permanentAddress', el => el.value );
-        
-        console.log("includes "+permanentAddress.includes(user.permanentAddress))
 
         if(!permanentAddress.includes(user.permanentAddress))
             return false;
