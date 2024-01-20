@@ -21,12 +21,12 @@ const worker = require('./worker.js');
         waitUntil: ['networkidle2', 'domcontentloaded'],
     });
     let user = {userName:"John", userEmail:"John@gmail.com", currentAddress:"currentAddress", permanentAddress:"permanentAddress"};
-    let userN = {userName:"John", userEmail:"Johngmail.com", currentAddress:"currentAddress", permanentAddress:"permanentAddress"};
+    let userForNegativeTest = {userName:"John", userEmail:"Johngmail.com", currentAddress:"currentAddress", permanentAddress:"permanentAddress"};
     
     await testTextBox_Positive(browser, page, user);
     await page.reload();
-    //await clearAll(browser, page);
-    await testTextBox_Negative(browser, page, userN);
+    
+    await testTextBox_Negative(browser, page, userForNegativeTest);
     
     await browser.close();
 })();

@@ -65,8 +65,6 @@ async function clearInput(browser, page, selector){
 }
 
 
-module.exports.fillForm = fillForm;
-module.exports.isOutputPresent = isOutputPresent;
-module.exports.getRndInteger = getRndInteger;
-module.exports.isUserEmailValid = isUserEmailValid;
-module.exports.clearAll = clearAll;
+module.exports = {
+    fillForm, isOutputPresent, getRndInteger, isUserEmailValid, clearAll
+};
